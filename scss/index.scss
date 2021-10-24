@@ -1,0 +1,19 @@
+@import "header";
+@import "toolbar";
+@import "formula";
+@import "table";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.excel {
+    position: relative;
+}
