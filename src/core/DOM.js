@@ -20,11 +20,17 @@ class DOM {
     }
 
     append(node) {
-        if (Element.prototype.append) {
-            this.$el.append(node.$el)
-        } else {
-            this.$el.appendChild(node.$el)
+        if (node instanceof DOM) {
+            node = node.$el
         }
+
+        if (Element.prototype.append) {
+            this.$el.append(node)
+        } else {
+            this.$el.appendChild(node)
+        }
+
+        return this
     }
 }
 
