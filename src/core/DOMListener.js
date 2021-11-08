@@ -5,6 +5,7 @@ export class DOMListener {
         if (!$root) {
             throw new Error(`No $root provided for DOMListener!`)
         }
+
         this.$root = $root
         this.listeners = listeners
     }
@@ -13,7 +14,13 @@ export class DOMListener {
         this.listeners.forEach(listener => {
             const method = getMethodName(listener)
 
-            this.$root.on(listener, () => { })
+            if (!this[method]) {
+                const name = this.name || ''
+
+                throw new Error(`Method ${method} is not implemented in ${name} Component`)
+            }
+
+            this.$root.on(listener, this[method].bind(this))
         })
     }
 
