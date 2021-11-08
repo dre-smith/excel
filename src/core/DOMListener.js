@@ -11,7 +11,7 @@ export class DOMListener {
 
     initDOMListeners() {
         this.listeners.forEach(listener => {
-            const method = capitalize(listener)
+            const method = getMethodName(listener)
 
             this.$root.on(listener, () => { })
         })
@@ -20,4 +20,8 @@ export class DOMListener {
     removeDOMListeners() {
 
     }
+}
+
+function getMethodName(eventName) {
+    return 'on' + capitalize(eventName)
 }
