@@ -36,7 +36,7 @@ export class Table extends ExcelComponent {
                 }
             }
 
-            document.ommouseup = () => {
+            document.onmouseup = () => {
                 document.onmousemove = null
             }
         }
