@@ -12,7 +12,7 @@ export class Table extends ExcelComponent {
     }
 
     toHTML() {
-        return createTable(20)
+        return createTable(26)
     }
 
     onMousedown(event) {
@@ -25,6 +25,8 @@ export class Table extends ExcelComponent {
                 const delta = e.pageX - coords.right
                 const value = coords.width + delta
                 $parent.$el.style.width = value + 'px'
+                this.$root.document.querySelectorAll(`[data-col="${$parent.data.col}"]`)
+                    .forEach(el => el.style.width = value + 'px')
             }
 
             document.ommouseup = () => {

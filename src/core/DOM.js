@@ -41,8 +41,8 @@ class DOM {
         return this
     }
 
-    dataset() {
-
+    get data() {
+        return this.$el.dataset
     }
 
     closest(selector) {
@@ -51,6 +51,10 @@ class DOM {
 
     getCoords() {
         return this.$el.getBoundingClientRect()
+    }
+
+    findAll(selector) {
+        return this.$el.querySelectorAll(selector)
     }
 }
 
