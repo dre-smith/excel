@@ -41,6 +41,10 @@ class DOM {
         return this
     }
 
+    dataset() {
+
+    }
+
     closest(selector) {
         return $(this.$el.closest(selector))
     }
