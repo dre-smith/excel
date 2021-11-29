@@ -1,3 +1,5 @@
+import { range } from '@core/utils'
+
 export function shouldResize(event) {
     return event.target.dataset.resize
 }
@@ -13,7 +15,7 @@ export function matrix($target, $current) {
     const rows = range(current.row, target.row)
 
     return cols.reduce((acc, col) => {
-        rows.forEach(row => acc.push(`${row}: ${col}`))
+        rows.forEach(row => acc.push(`${row}:${col}`))
         return acc
     }, [])
 }
