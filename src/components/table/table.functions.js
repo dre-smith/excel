@@ -40,5 +40,5 @@ export function nextSelector(key, { col, row }) {
             break
     }
 
-    return `[data-id="${row}: ${col}]`
+    return `[data-id="${row}:${col}"]`
 }
