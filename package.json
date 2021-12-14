@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dre-smith/excel.git"
+    "url": "git+https://github.com/github-for-webdev/excel.git"
   },
   "author": "Andrey Kuznetsov <myfullstackdev@vk.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dre-smith/excel/issues"
+    "url": "https://github.com/github-for-webdev/excel/issues"
   },
-  "homepage": "https://github.com/dre-smith/excel#readme",
+  "homepage": "https://github.com/github-for-webdev/excel#readme",
   "private": true,
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
