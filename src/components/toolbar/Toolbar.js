@@ -39,7 +39,7 @@ export class Toolbar extends ExcelStateComponent {
             const value = JSON.parse($target.data.value)
             const key = Object.keys(value)[0]
 
-            this.setState({ [key]: value })
+            this.setState({ [key]: value[key] })
         }
     }
 }
