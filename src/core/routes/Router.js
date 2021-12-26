@@ -1,4 +1,5 @@
 import { $ } from '@core/DOM'
+import { ActiveRoute } from '@core/routes/ActiveRoute'
 
 export class Router {
     constructor(selector, routes) {
@@ -15,14 +16,18 @@ export class Router {
     }
 
     init() {
-        window.addEventListener('hashchanged', this.changePageHandler)
+        window.addEventListener('hashchange', this.changePageHandler)
+        this.changePageHandler()
     }
 
-    changePageHandler(event) {
+    changePageHandler() {
+        console.log(ActiveRoute.path)
+        console.log(ActiveRoute.param)
 
+        this.$placeholder.html(`<h1>${ActiveRoute.path}</h1>`)
     }
 
     destroy() {
-        window.removeEventListener('hashchanged', this.changePageHandler)
+        window.removeEventListener('hashchange', this.changePageHandler)
     }
 }
