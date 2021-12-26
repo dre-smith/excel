@@ -1,3 +1,4 @@
+/*
 import { Excel } from '@/components/excel/Excel'
 import { Header } from '@/components/header/Header'
 import { Toolbar } from '@/components/toolbar/Toolbar'
@@ -7,8 +8,15 @@ import { createStore } from '@/core/createStore'
 import { rootReducer } from '@/redux/rootReducer'
 import { storage, debounce } from '@core/utils'
 import { initialState } from '@/redux/initialState'
+*/
 import './scss/index.scss'
+import { Router } from '@core/routes/Router'
 
+new Router('#app', {
+
+})
+
+/*
 const store = createStore(rootReducer, initialState)
 
 const stateListener = debounce(state => {
@@ -24,3 +32,5 @@ const excel = new Excel('#app', {
 })
 
 excel.render()
+
+*/
