@@ -1,17 +1,20 @@
 import { Page } from '@core/Page'
 import { $ } from '@core/DOM'
+import { getAllRecords } from './dashboard.functions'
 
 export class DashboardPage extends Page {
     getRoot() {
+        const now = Date.now().toString()
+
         return $.create('div', 'db').html(`
             <div class="db__header">
-                <h1>Excel Dashboard</h1>
+                <h1>Excel. Панель управления</h1>
             </div>
 
             <div class="db__new">
                 <div class="db__view">
-                    <a href="#" class="db__create">
-                        Новая<br />Таблица
+                    <a href="#excel/${now}" class="db__create">
+                        Новая<br />таблица
                     </a>
                 </div>
             </div>
@@ -21,12 +24,9 @@ export class DashboardPage extends Page {
                     <span>Название</span>
                     <span>Дата открытия</span>
                 </div>
-                <div class="db__list">
-                    <li class="db__record">
-                        <a href="#">Таблица номер 1</a>
-                        <strong>01.01.2022</strong>
-                    </li>
-                </div>
+                <ul class="db__list">
+                    ${getAllRecords()}
+                </ul>
             </div>
         `)
     }
