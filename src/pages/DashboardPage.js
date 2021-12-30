@@ -1,6 +1,6 @@
 import { Page } from '@core/Page'
 import { $ } from '@core/DOM'
-import { getAllRecords } from './dashboard.functions'
+import { createRecordsTable } from './dashboard.functions'
 
 export class DashboardPage extends Page {
     getRoot() {
@@ -20,13 +20,7 @@ export class DashboardPage extends Page {
             </div>
 
             <div class="db__table db__view">
-                <div class="db__list-header">
-                    <span>Название</span>
-                    <span>Дата открытия</span>
-                </div>
-                <ul class="db__list">
-                    ${getAllRecords()}
-                </ul>
+                ${createRecordsTable()}
             </div>
         `)
     }
