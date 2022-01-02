@@ -56,7 +56,6 @@ export class Table extends ExcelComponent {
         this.selection.select($cell)
         this.$emit('table:select', $cell)
         const styles = $cell.getStyles(Object.keys(defaultStyles))
-        console.log('Styles', styles)
         this.$dispatch(actions.changeStyles(styles))
     }
 
@@ -64,7 +63,6 @@ export class Table extends ExcelComponent {
         try {
             const data = await resizeHandler(this.$root, event)
             this.$dispatch(actions.tableResize(data))
-            console.log(data)
         } catch (e) {
             console.warn('Resize error', e.message)
         }
