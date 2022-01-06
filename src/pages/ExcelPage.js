@@ -26,7 +26,6 @@ export class ExcelPage extends Page {
         const store = createStore(rootReducer, initialState)
 
         this.storeSub = store.subscribe(this.processor.listen)
-
         this.excel = new Excel({
             components: [Header, Toolbar, Formula, Table],
             store
